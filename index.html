@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <div style="background-color: blueviolet; height: 200px; width: 200px; border-radius: 50%; margin-top: 10px; margin-bottom: 10px;"></div>
+        <h4>Lab Section:D</h4>
+    <div style="display: flex; margin-left: auto; margin-right: auto;">
+        <div>
+            <div style="background-color: aqua; height: 1000px; width: 300px;">
+                
+             <form action=""  style="margin: 10px 20px;">
+                <h3 style="border: 10px solid;text-align: center;">User Registration</h3>
+            <!-- name field -->
+                <label>
+                    <p>Name</p>
+                    <input  style="border: 1px solid; padding: 10px; border-radius: 5px;" type="text" id="fullname" placeholder="Please give your full name" >
+                </label>
+                <!-- email field -->
+                <label >
+                    <p>Email</p>
+                    <input style="border: 1px solid; padding: 10px; border-radius: 5px;" type="email" placeholder="Please give your email address" id="email">
+                </label>
+                <!-- password field -->
+                <label >
+                    <p>Password</p>
+                    <input style="border: 1px solid; padding: 10px; border-radius: 5px;" type="password" placeholder="Give a strong password" id="password">
+                </label>
+                <!-- confirmed password -->
+                <label >
+                    <p>Confirmed Password</p>
+                    <input style="border: 1px solid; padding: 10px; border-radius: 5px;" type="password" placeholder="Retype the password" id="confirmed_password">
+                </label>
+                <!-- DOB field -->
+                <label >
+                    <p>DOB</p>
+                    <input style="border: 1px solid; padding: 10px; border-radius: 5px;" type="date" placeholder="Please give your birth date" id="dateOfBirth">
+                </label>
+                <!-- user country -->
+                <label >
+                    <p>Country</p>
+                   <select style="border: 1px solid; padding: 10px; border-radius: 5px;" name="" id="country" required>
+                    <option value="" selected disabled>Select your Country</option>
+                    <option value="Bangladesh">Bangladesh</option>
+                    <option value="India">India</option>
+                    <option value="Pakistan">Pakistan</option>
+                    <option value="Nepal">Nepal</option>
+                    <option value="USA">USA</option>
+                    <option value="Canada">Canada</option>
+                   </select>
+                </label>
+                <!-- preference color -->
+                <label >
+                    <p>Color</p>
+                    <input style="border: 1px solid; padding: 10px; border-radius: 5px;" type="color" placeholder="Select a color">
+                </label>
+                <!-- gander -->
+                <label >
+                    <p>Gender</p>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+                    <br>
+                </label>
+                <!-- check box -->
+                 <label>
+                    <br>
+                    <input type="checkbox" id="terms">
+                    <label for="terms"><a href="">terms and conditions</a></label>
+                 </label>
+                 <br>
+                 <br>
+                 <input style="border: 1px solid; padding: 10px; border-radius: 5px; background-color: blue; color: white; box-shadow: 2px 2px black;" id="registration" type="button"  value="Confirm Registration">
+             </form>
+            </div>
+            <div style="background-color:black; height: 200px; width: 300px;"></div>
+        </div>
+        <div style="margin-top: 20px; background-color: blue; height: 1200px; width: 200px;"></div>
+    </div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
