@@ -1,68 +1,73 @@
-document.getElementById('registration').addEventListener('click', function (e) {
+document.getElementById('registration').addEventListener('click', function () {
     const fullName = document.getElementById('fullname').value.trim();
     const email = document.getElementById('email').value.trim();
     const password = document.getElementById('password').value;
-    const confirmed_password = document.getElementById('confirmed_password').value;
-    const dateOfBirthValue = document.getElementById('dateOfBirth').value;
-    const dateOfBirth = new Date(dateOfBirthValue);
-    const checkName = /^[a-zA-Z\s]+$/.test(fullName); // Allow spaces in names
-    const checkEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
-    const checkPassword = /^(?=.*\d).{8,}$/.test(password);
-    const country = document.getElementById("country").value;
+    const confirmPassword = document.getElementById('confirmed_password').value;
+    const dobInput = document.getElementById('dateOfBirth').value;
+    const country = document.getElementById('country').value;
     const genderElement = document.querySelector('input[name="gender"]:checked');
-    const gender = genderElement ? genderElement.value : null;
-    const isChecked = document.getElementById("terms").checked;
+    const acceptedTerms = document.getElementById('terms').checked;
+
+    const nameRegex = /^[a-zA-Z\s]+$/;
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const passwordRegex = /^(?=.*\d).{8,}$/;
+
+    // Validate name
+    if (!nameRegex.test(fullName)) {
+        alert("Name must only contain letters and spaces.");
+        return;
+    }
+
+    // Validate email
+    if (!emailRegex.test(email)) {
+        alert("Please enter a valid email address.");
+        return;
+    }
+
+    // Validate password
+    if (!passwordRegex.test(password)) {
+        alert("Password must be at least 8 characters long and contain at least one number.");
+        return;
+    }
+
+    // Confirm password match
+    if (password !== confirmPassword) {
+        alert("Passwords do not match.");
+        return;
+    }
+
+    // Validate DOB
+    if (!dobInput) {
+        alert("Please enter your date of birth.");
+        return;
+    }
+
+    const dob = new Date(dobInput);
     const today = new Date();
+    const ageLimit = new Date(today.getFullYear() - 18, today.getMonth(), today.getDate());
 
-    // Check name
-    if (!checkName) {
-        return alert("Username must be filled up and it can't contain numbers or special characters.");
-    }
-    console.log(fullName);
-
-    // Check valid email
-    if (!checkEmail) {
-        return alert("Please provide a valid email.");
-    }
-    console.log(email);
-
-    // Password validation
-    if (!checkPassword || password !== confirmed_password) {
-        return alert("Password must be at least 8 characters long and contain at least one number. Confirm password must match.");
-    }
-    console.log(password);
-
-    // Age validation
-    if (!dateOfBirthValue || isNaN(dateOfBirth)) {
-        return alert("Please enter a valid date of birth.");
+    if (dob > ageLimit) {
+        alert("You must be at least 18 years old.");
+        return;
     }
 
-    // Calculate 18 years ago from today
-    const ageLimitDate = new Date();
-    ageLimitDate.setFullYear(today.getFullYear() - 18);
-
-    if (dateOfBirth > ageLimitDate) {
-        return alert("You must be at least 18 years old.");
-    }
-    console.log(dateOfBirth);
-
-    // Country validation
+    // Validate country
     if (!country) {
-        return alert("Please select a country.");
+        alert("Please select a country.");
+        return;
     }
-    console.log(country);
 
-    // Gender validation
-    if (!gender) {
-        return alert("Please select a gender.");
+    // Validate gender selection
+    if (!genderElement) {
+        alert("Please select your gender.");
+        return;
     }
-    console.log(gender);
 
-    // Terms and conditions validation
-    if (!isChecked) {
-        return alert("You must agree to the terms and conditions.");
+    // Check if terms and conditions are accepted
+    if (!acceptedTerms) {
+        alert("You must agree to the terms and conditions.");
+        return;
     }
-    console.log("Terms and conditions accepted.");
 
     // If all validations pass
     alert("Registration successful!");
