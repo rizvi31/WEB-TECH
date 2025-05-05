@@ -1,88 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>User Registration</title>
+    <style>
+        body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+}
+
+.logo {
+    background-color: red;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    margin: 20px 0;
+}
+
+.lab-section {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Ensures both child boxes are same height */
+    width: 100%;
+    gap: 10px;
+    max-width: 1000px;
+}
+
+.form-container {
+    background-color: #e0f7fa;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    border-radius: 10px;
+    flex-grow: 1;
+}
+
+.form-container h3 {
+    text-align: center;
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+label p {
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="color"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 0px;
+}
+
+.radio-group {
+    margin-bottom: 15px;
+}
+
+.checkbox-group {
+    margin: 10px 0;
+}
+
+input[type="button"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+input[type="button"]:hover {
+    background-color: #0056b3;
+}
+
+.side-bar {
+    background-color: #007BFF;
+    width: 400px;
+    border-radius: 10px;
+    flex-shrink: 0;
+    height: auto;
+}
+
+.footer-box {
+    background-color: #ccc;
+    height: 100px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+        </style>
 </head>
 <body>
-    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-        <div style="background-color: red; height: 100px; width: 100px; border-radius: 50%; margin-top: 10px; margin-bottom: 10px;"></div>
-        <h4>Lab Section:D</h4>
-    <div style="display: flex; margin-left: auto; margin-right: auto;">
-        <div>
-            <div style="background-color: aquamarine; height: 1000px; width: 300px;">
-                
-             <form action=""  style="margin: 10px 20px;">
-                <h3 style="border: 10px solid;text-align: center;">User Registration</h3>
-            <!-- name field -->
-                <label>
-                    <p>Name</p>
-                    <input  style="border: 1px solid; padding: 10px; border-radius: 5px;" type="text" id="fullname" placeholder="Please give your full name" >
-                </label>
-                <!-- email field -->
-                <label >
-                    <p>Email</p>
-                    <input style="border: 1px solid; padding: 10px; border-radius: 5px;" type="email" placeholder="Please give your email address" id="email">
-                </label>
-                <!-- password field -->
-                <label >
-                    <p>Password</p>
-                    <input style="border: 1px solid; padding: 10px; border-radius: 5px;" type="password" placeholder="Give a strong password" id="password">
-                </label>
-                <!-- confirmed password -->
-                <label >
-                    <p>Confirmed Password</p>
-                    <input style="border: 1px solid; padding: 10px; border-radius: 5px;" type="password" placeholder="Retype the password" id="confirmed_password">
-                </label>
-                <!-- DOB field -->
-                <label >
-                    <p>DOB</p>
-                    <input style="border: 1px solid; padding: 10px; border-radius: 5px;" type="date" placeholder="Please give your birth date" id="dateOfBirth">
-                </label>
-                <!-- user country -->
-                <label >
-                    <p>Country</p>
-                   <select style="border: 1px solid; padding: 10px; border-radius: 5px;" name="" id="country" required>
-                    <option value="" selected disabled>Select your Country</option>
-                    <option value="Bangladesh">Bangladesh</option>
-                    <option value="India">India</option>
-                    <option value="Pakistan">Pakistan</option>
-                    <option value="Nepal">Nepal</option>
-                    <option value="USA">USA</option>
-                    <option value="Canada">Canada</option>
-                   </select>
-                </label>
-                <!-- preference color -->
-                <label >
-                    <p>Color</p>
-                    <input style="border: 1px solid; padding: 10px; border-radius: 5px;" type="color" placeholder="Select a color">
-                </label>
-                <!-- gander -->
-                <label >
-                    <p>Gender</p>
-                    <input type="radio" id="male" name="gender" value="male">
-                    <label for="male">Male</label>
-                    <input type="radio" id="female" name="gender" value="female">
-                    <label for="female">Female</label>
-                    <br>
-                </label>
-                <!-- check box -->
-                 <label>
-                    <br>
-                    <input type="checkbox" id="terms">
-                    <label for="terms"><a href="">terms and conditions</a></label>
-                 </label>
-                 <br>
-                 <br>
-                 <input style="border: 1px solid; padding: 10px; border-radius: 5px; background-color: blue; color: white; box-shadow: 2px 2px black;" id="registration" type="button"  value="Confirm Registration">
-             </form>
+
+    <div class="container">
+        <div class="logo"></div>
+        <h4 class="lab-section">Lab Section: D</h4>
+
+        <div class="form-wrapper">
+            <div>
+                <div class="form-container">
+                    <form action="">
+                        <h3>User Registration</h3>
+
+                        <label>
+                            <p>Name</p>
+                            <input type="text" id="fullname" placeholder="Please give your full name">
+                        </label>
+
+                        <label>
+                            <p>Email</p>
+                            <input type="email" id="email" placeholder="Please give your email address">
+                        </label>
+
+                        <label>
+                            <p>Password</p>
+                            <input type="password" id="password" placeholder="Give a strong password">
+                        </label>
+
+                        <label>
+                            <p>Confirm Password</p>
+                            <input type="password" id="confirmed_password" placeholder="Retype the password">
+                        </label>
+
+                        <label>
+                            <p>Date Of Barth</p>
+                            <input type="date" id="dateOfBirth">
+                        </label>
+
+                        <label>
+                            <p>Country</p>
+                            <select id="country" required>
+                                <option value="" disabled selected>Select your Country</option>
+                                <option value="Bangladesh">Bangladesh</option>
+                                <option value="Pakistan">Pakistan</option>
+                                <option value="India">India</option>
+                                <option value="Nepal">Nepal</option>
+                                <option value="USA">USA</option>
+                                <option value="Canada">Canada</option>
+                            </select>
+                        </label>
+
+                        <label>
+                            <p>Preferred Color</p>
+                            <input type="color">
+                        </label>
+
+                        <div class="radio-group">
+                            <p>Gender</p>
+                            <input type="radio" id="male" name="gender" value="male">
+                            <label for="male">Male</label>
+                            <input type="radio" id="female" name="gender" value="female">
+                            <label for="female">Female</label>
+                        </div>
+
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="terms">
+                            <label for="terms"><a href="#">Accept terms and conditions</a></label>
+                        </div>
+
+                        <input id="registration" type="button" value="Confirm Registration">
+                    </form>
+                </div>
+                <div class="footer-box"></div>
             </div>
-            <div style="background-color:gray; height: 200px; width: 300px;"></div>
+
+            <div class="side-bar"></div>
         </div>
-        <div style="margin-top: 20px; background-color: blue; height: 1200px; width: 200px;"></div>
     </div>
-    </div>
+
     <script src="./index.js"></script>
 </body>
 </html>
